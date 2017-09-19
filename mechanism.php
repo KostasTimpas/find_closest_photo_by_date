@@ -59,5 +59,5 @@ $number_of_photos_with_older_datename_in_array = count($photos_array_with_older_
 echo "<img src='***your-domainname.com***/***your-folder-name***/" .  $photos_array_with_older_datename[$number_of_photos_with_older_datename_in_array - 1] . ".jpg' />";
 
 
-
+//test fork
 ?>
