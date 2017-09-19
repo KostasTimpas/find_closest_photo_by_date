@@ -55,6 +55,9 @@ for($i=0; $i < count($photos_array); $i++){
 }
 
 $number_of_photos_with_older_datename_in_array = count($photos_array_with_older_datename);
+//Get the filename and print the photo
 echo "<img src='***your-domainname.com***/***your-folder-name***/" .  $photos_array_with_older_datename[$number_of_photos_with_older_datename_in_array - 1] . ".jpg' />";
+
+
 
 ?>
