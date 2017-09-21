@@ -1,8 +1,9 @@
-<!-- NETXT GAME MECHANISM START-->
-                                    <?php // Array with file names in file directory games
-
+<?php 
+// Array with file names in file directory games
 $photos_array                     = array();
-$photos_array_with_older_datename = array();
+
+ //Creates an array with name of photos which we need  
+$photos_array_with_same_or_next_datename = array();
 foreach (glob('./games/*.*') as $filename) {
     $filename = str_replace("./games/", "", $filename);
     $filename = str_replace(".jpg", "", $filename);
@@ -41,9 +42,8 @@ for ($i = 0; $i < count($photos_array); $i++) {
     if ($current_mothn_int <= $month_of_photo_int) {
         if ($current_date_int <= $day_of_photo_int) {
             
-            //Creates an array with name of photos which passes the if statment from above  
-            
-            array_push($photos_array_with_older_datename, $photos_array[$i]);
+
+            array_push($photos_array_with_same_or_next_datename, $photos_array[$i]);
             
             
         }
@@ -53,13 +53,18 @@ for ($i = 0; $i < count($photos_array); $i++) {
     
 }
 
-$number_of_photos_with_older_datename_in_array = count($photos_array_with_older_datename);
-//Get the filename and print the photo
+// Number of photos in $photos_array_with_same_or_next_datename array
+$number_of_photos_with_older_datename_in_array = count($photos_array_with_same_or_next_datename);
+
+//Check if the array contains at least one photo
 if ($number_of_photos_with_older_datename_in_array == 0) {
-    echo "<img class='next-game-photo' src='/wp-content/uploads/2016/07/programma_banner.jpg' />";
-} else {
     
-    echo "<img class='next-game-photo' src='/games/" . $photos_array_with_older_datename[0] . ".jpg' />";
+    // if there isn't any photo in array echo the default photo 
+    echo "<img class='***your class***' src='***Your Default Photo ***' />";
+} else {
+     
+     // echo the photo we want
+    echo "<img class='***your class***' src='/games/" . $photos_array_with_same_or_next_datename[0] . ".jpg' />";
 }
 ;
 
