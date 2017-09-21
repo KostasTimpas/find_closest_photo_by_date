@@ -63,7 +63,7 @@ if ($number_of_photos_with_older_datename_in_array == 0) {
     echo "<img class='***your class***' src='***Your Default Photo ***' />";
 } else {
      
-     // echo the photo we want
+     // echo the next available photo
     echo "<img class='***your class***' src='/games/" . $photos_array_with_same_or_next_datename[0] . ".jpg' />";
 }
 ;
